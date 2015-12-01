@@ -9,7 +9,7 @@
  :db.install/_attribute :db.part/db}
 ;; reference owners to pets
  {:db/id #db/id[:db.part/db]
-  :db/ident :owner/pet
+  :db/ident :owner/pets
   :db/valueType :db.type/ref
   :db/cardinality :db.cardinality/many
   :db/doc "All pets for one owner"

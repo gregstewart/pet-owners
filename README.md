@@ -6,7 +6,17 @@ Got to: https://youtu.be/ao7xEwCjrWQ?t=1509
 
 ## Usage
 
-FIXME
+```
+ln -s /usr/local/Cellar/datomic/0.9.5302/bin/datomic-transactor /usr/local/Cellar/datomic/0.9.5302/bin/transactor
+```
+
+```
+lein datomic start
+```
+
+```
+lein datomic initialize
+```
 
 ## License
 
