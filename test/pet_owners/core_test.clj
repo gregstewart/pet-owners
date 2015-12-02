@@ -3,6 +3,7 @@
             [pet-owners.core :refer :all]
             [datomic.api :as d]))
 
+;; ----- Helper function -----
 (defn create-empty-in-memory-db []
   (let [uri "datomic:mem://pet-owners-test-db"]
     (d/delete-database uri)
@@ -13,8 +14,8 @@
       conn)))
 
 ;; Adding one owner should allow us to find that owner
-(expect #{["John"]}
-  (with-redefs [conn (create-empty-in-memory-db)]
+(expect #{["John"]} ;; datomic returns a Set of Vectors
+  (with-redefs [conn (create-empty-in-memory-db)] ;; setup in memory database for tests
     (do
       (add-pet-owner "John")
       (find-all-pet-owners))))

@@ -1,5 +1,5 @@
-;; [entity attribute value time/transaction] = known datom or fact
-;; [owner name "John"]
+;; [entity attribute value time/transaction] = known as datom or fact
+;; [owner  name      "John"] -> time/transaction is taken care by datomic
 
 [{:db/id #db/id[:db.part/db]
  :db/ident :owner/name
@@ -7,7 +7,8 @@
  :db/cardinality :db.cardinality/one
  :db/doc "An owner's name"
  :db.install/_attribute :db.part/db}
-;; reference owners to pets
+
+ ;; reference owners to pets
  {:db/id #db/id[:db.part/db]
   :db/ident :owner/pets
   :db/valueType :db.type/ref

@@ -5,7 +5,6 @@
 
 (def uri "datomic:free://localhost:4334/pet-owners-db")
 (def conn (d/connect uri))
-;; (def conn nil)
 
 ;; ------ Helper functions ------
 
@@ -29,7 +28,7 @@
                          {:db/id (find-pet-owner-id owner-name)
                           :owner/pets pet-id}])))
 
-;;http://www.learndatalogtoday.org/
+;; To learn datalog: -> http://www.learndatalogtoday.org/
 (defn find-all-pet-owners []
   (d/q '[:find ?owner-name
          :where [_ :owner/name ?owner-name]]
@@ -43,6 +42,9 @@
                 [?pet :pet/name ?pet-name]]
        (d/db conn)
        owner-name))
+
+;; ----- Evaluate these to validate -----
+;; Use cmd+enter when connected in LightTable
 
 (add-pet-owner "Bob")
 (find-all-pet-owners)
