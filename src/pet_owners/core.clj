@@ -3,9 +3,9 @@
 
 ;; ------ Database connection ------
 
-;; (def uri "datomic:free://localhost:4334/pet-owners-db")
-;; (def conn (d/connect uri))
-(def conn nil)
+(def uri "datomic:free://localhost:4334/pet-owners-db")
+(def conn (d/connect uri))
+;; (def conn nil)
 
 ;; ------ Helper functions ------
 
@@ -44,7 +44,7 @@
        (d/db conn)
        owner-name))
 
-;; (add-pet-owner "Bob")
-;; (find-all-pet-owners)
-;; (add-pet "Sooty" "Bob")
-;; (find-pets-for-owner "Bob")
+(add-pet-owner "Bob")
+(find-all-pet-owners)
+(add-pet "Sooty" "Bob")
+(find-pets-for-owner "Bob")
